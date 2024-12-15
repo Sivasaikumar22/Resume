@@ -1,71 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Digital Marketing Landing | Aslicecode </title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav__header">
-        <div class="nav__logo">
-          <a href="#">
-            <img src="assets/logo.png" alt="logo" />
-            <span>Digital</span>
-          </a>
-        </div>
-        <div class="nav__menu__btn" id="menu-btn">
-          <i class="ri-menu-line"></i>
-        </div>
-      </div>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Designer</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">News</a></li>
-      </ul>
-    </nav>
-    <header class="header__container">
-      <div class="header__image">
-        <img src="assets/header.png" alt="header" />
-      </div>
-      <div class="header__content">
-        <h2>UI UX DESIGN AGENCY</h2>
-        <h1>
-          Make Digital<br /><span class="h1__span-1">Product</span>
-          <span class="h1__span-2">with our Agency</span>
-        </h1>
-        <p>
-          From concept to launch, our expert team is dedicated to delivering
-          exceptional solutions tailored to your needs. Let's bring your vision
-          to life and create something extraordinary together.
-        </p>
-        <div class="header__btn">
-          <button class="btn">Learn More</button>
-        </div>
-        <ul class="socials">
-          <li>
-            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="ri-twitter-fill"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="ri-youtube-fill"></i></a>
-          </li>
-        </ul>
-        <div class="header__bar">
-          Copyright © 2024 Aslicecode. All rights reserved.
-        </div>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R. Siva Sai Kumar's Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="assets/sivasai.png" alt="R. Siva Sai Kumar" class="profile-pic">
+        <h1>R. Siva Sai Kumar</h1>
+        <h2>Cloud and DevOps Engineer</h2>
+        <button id="toggle-nav" class="toggle-nav">☰</button>
     </header>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="main.js"></script>
-  </body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="summary">
+        <h3>Summary</h3>
+        <p>An experienced Cloud and DevOps Engineer with 3 years of experience working in Multi-cloud. Skilled in implementing and maintaining cloud-based solutions, leveraging automation, and improving operational efficiencies. Adept at collaborating with cross-functional teams and stakeholders to deliver high-quality solutions that align with business goals.</p>
+    </section>
+
+    <section id="experience">
+        <h3>Professional Experience</h3>
+        <h4>Deloitte | Cloud and Operational Engineer</h4>
+        <p><strong>July 2023 - Present</strong></p>
+        <ul>
+            <li>Developing puppet files for Puppet Open Source and Masterless.</li>
+            <li>Defines infrastructure as code, ensuring consistency across environments.</li>
+            <li>Automates tasks like software installation and updates.</li>
+            <li>Enhances scalability, reduces errors, and speeds up deployment.</li>
+            <li>Troubleshoots configuration inconsistencies and system drift, ensuring stable deployments.</li>
+        </ul>
+
+        <h4>Department Of Health | Cloud and DevOps Engineer</h4>
+        <p><strong>July 2022 - July 2023</strong></p>
+        <ul>
+            <li>Collaborated using Git for effective code management.</li>
+            <li>Implemented Git best practices for a clean codebase.</li>
+            <li>Enforced access control through GitHub actions and branch restrictions.</li>
+            <li>Managed code reviews using branch protection rules.</li>
+            <li>Automated build, test, and deploy with Azure DevOps.</li>
+            <li>Created YAML-based pipelines for version-controlled processes.</li>
+            <li>Integrated Azure DevOps with Teams for smooth communication.</li>
+            <li>Utilized Docker for efficient containerization and deployment.</li>
+            <li>Enhanced development workflow through Docker and cloud providers.</li>
+        </ul>
+
+        <h4>TOTIRA | Developer and DevOps Engineer</h4>
+        <p><strong>March 2022 - July 2022</strong></p>
+        <ul>
+            <li>Developed and maintained Java applications with Spring Boot.</li>
+            <li>Assisted senior engineers in designing and implementing cloud solutions.</li>
+            <li>Contributed to automation script development using YAML.</li>
+            <li>Improved deployment processes through Azure DevOps.</li>
+            <li>Supported monitoring and troubleshooting of cloud infrastructure.</li>
+            <li>Utilized Azure DevOps for continuous integration and deployment.</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+      <h3>Skills</h3>
+      <ul>
+          <li><strong>AZURE:</strong> Virtual Machines, Container registries, Storage, Web app services, SQL database.</li>
+          <li><strong>DevOps Tools:</strong> Git & GitHub, Azure DevOps, Docker, Puppet, Terraform.</li>
+          <li><strong>AWS:</strong> EC2, VPC, Auto-scaling, Load balancers, S3.</li>
+          <li><strong>Programming Languages:</strong> Core Java (Spring Boot), HTML, CSS, Python (Basic).</li>
+          <li><strong>Agile Tools:</strong> Jira, Kanban Boards.</li>
+      </ul>
+    </section>
+  
+    <section id="languages">
+        <h3>Languages</h3>
+        <ul>
+            <li>English</li>
+            <li>Telugu</li>
+            <li>Kannada</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h3>Education Background</h3>
+        <h4>Bachelor of Engineering</h4>
+        <p>Anna University - Completed in 2020</p>
+        <h4>Board Of Intermediate Education</h4>
+        <p>Sri Chaitanya Junior College - Completed in 2016</p>
+        <h4>Board Of Secondary Education</h4>
+        <p>Good Shepherd English Medium School - Completed in 2014</p>
+    </section>
+
+    <section id="contact">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:ragamsivasaikumar@gmail.com">ragamsivasaikumar@gmail.com</a></p>
+        <p>Location: Bengaluru, Karnataka, India</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/r-sivasai-kumar-110960215" target="_blank">sivasaikumar</a></p>
+    </section>
+
+    <footer>
+        <p>© 2024 R. Siva Sai Kumar</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
