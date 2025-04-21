@@ -3,111 +3,709 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R. Siva Sai Kumar's Resume</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta property="og:title" content="R. Siva Sai Kumar - Cloud Engineer">
+    <meta property="og:description" content="Cloud Engineer with expertise in DevOps, Azure, and Docker.">
+    <meta property="og:image" content="./assets/sivasai.png">
+    <meta property="og:url" content="https://sivasaikumar22.github.io/Resume/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>R. Siva Sai Kumar - Cloud Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 2.3s, color 2.3s;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(2, 119, 189, 0.9);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background-color 2.3s, color 2.3s;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center; /* Center the entire nav content */
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            left: 20px; /* Position hamburger on the left */
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center; /* Center the nav items horizontally */
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 10px 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        nav ul li a.active {
+            color: #b2ebf2;
+            text-decoration: underline;
+        }
+        nav ul li a:hover {
+            color: #b2ebf2;
+        }
+        .hero {
+            height: 100vh;
+            width: 100%;
+            /* background: url('./assets/background.mp4') no-repeat center/cover; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            z-index: 1;
+        }
+
+        /* -- Add this CSS -- */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            background: url('./assets/sivasai.png') no-repeat center/cover ;
+            margin: 0 auto 20px;
+            transition: transform 0.3s;
+        }
+        .hero .profile-img:hover {
+            transform: scale(1.1);
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 2.5em;
+            color: #000001;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #01579b;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 2.3s, color 2.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card h3 {
+            color: #01579b;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Add this inside your existing <style> tag */
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .experience-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #0277bd;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill {
+            background: #b2ebf2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: #01579b;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        .skill:hover {
+            background: #0277bd;
+            color: white;
+        }
+        #contact {
+            background: #0277bd;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            transition: background-color 2.3s, color 2.3s;
+        }
+        #contact h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: white;
+        }
+        #contact p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+        #contact a {
+            color: #b2ebf2;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #01579b;
+            color: white;
+            font-size: 0.9em;
+            transition: background-color 2.3s, color 2.3s;
+        }
+        /* Mobile View with Hamburger Menu */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-container {
+                justify-content: flex-start; /* Align hamburger to the left */
+                position: relative;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center; /* Center items vertically in the dropdown */
+                justify-content: center; /* Center items vertically in the dropdown */
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                height: auto; /* Adjust height dynamically */
+                background: rgba(2, 119, 189, 0.95);
+                padding: 20px 0;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                margin: 15px 0;
+            }
+            .hero {
+                height: 70vh;
+                width: 100%;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .hero .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            section {
+                padding: 40px 15px;
+            }
+            h2 {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .card {
+                padding: 15px;
+            }
+            .card h3 {
+                font-size: 1.1em;
+            }
+            .skills-list {
+                gap: 6px;
+            }
+            .skill {
+                padding: 5px 10px;
+                font-size: 0.85em;
+            }
+            #contact {
+                padding: 15px;
+                width: 100%;
+            }
+            #contact h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+            #contact p {
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            .hero p {
+                font-size: 0.9em;
+            }
+            .hero .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .content-grid {
+                padding: 10px;
+            }
+            .card {
+                padding: 12px;
+                margin-bottom: 20px;
+            }
+        }
+        /* Dark Theme Styles */
+         body.dark-theme {
+            background: #000000;
+            color: #e0e0e0;
+            transition: background-color 2.3s, color 2.3s;
+        }
+
+
+        body.dark-theme nav {
+            background: rgba(0, 0, 0, 0.9);
+            transition: background-color 2.3s, color 2.3s;
+        }
+
+        body.dark-theme nav ul li a {
+            color: #e0e0e0;
+            transition: background-color 2.3s, color 2.3s;
+        }
+
+        body.dark-theme nav ul li a:hover {
+            color: #b2ebf2;
+        }
+
+        body.dark-theme .card {
+            background: #1e1e1e;
+            color: #e0e0e0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: background-color 2.3s, color 2.3s;
+        }
+
+        body.dark-theme .experience-list li::before {
+            color: #4fc3f7;
+        }
+
+        body.dark-theme #contact{
+            background: #1e1e1e;
+            color: #e0e0e0;
+            transition: background-color 2.3s, color 2.3s;
+        }
+
+        body.dark-theme #contact h2 {
+        color: #4fc3f7; /* Light blue for the "Contact Me" heading */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for better visibility */
+        transition: background-color 2.3s, color 2.3s;
+        }
+
+        body.dark-theme footer {
+            background: #1e1e1e;
+            color: #e0e0e0;
+            transition: background-color 2.3s, color 2.3s;
+        }
+        
+        /* Theme Toggle Button */
+        #theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        #theme-toggle:focus {
+            outline: none;
+        }
+            /* Dark Theme Section Headings */
+        body.dark-theme h2 {
+            color: #4fc3f7; /* Light blue for headings */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for better visibility */
+        }
+
+        body.dark-theme h2::after {
+            background: #4fc3f7; /* Match the heading color for the underline */
+        }
+
+        /* Back to Top Button Styles */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none; /* Hidden by default */
+            background-color: #0277bd;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        #back-to-top:hover {
+            background-color: #01579b;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <img src="assets/sivasai.png" alt="R. Siva Sai Kumar" class="profile-pic">
-        <h1>R. Siva Sai Kumar</h1>
-        <h2>Cloud and DevOps Engineer</h2>
-        <button id="toggle-nav" class="toggle-nav">☰</button>
-    </header>
-
-    <nav id="navbar">
-        <ul>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav>
+        <div class="nav-container">
+            <button class="hamburger" aria-label="Toggle navigation">☰</button>
+            <ul>
+                <li><a href="#about" aria-label="Navigate to About section">About</a></li>
+                <li><a href="#experience" aria-label="Navigate to experience section">Experience</a></li>
+                <li><a href="#skills" aria-label="Navigate to skills section">Skills</a></li>
+                <li><a href="#education" aria-label="Navigate to education section">Education</a></li>
+                <li><a href="#Certifications" aria-label="Navigate to Certifications section">Certifications</a></li>
+                <li><a href="#contact" aria-label="Navigate to contact section">Contact</a></li>
+            </ul>
+            <!-- Dark Theme Toggle Button -->
+            <button id="theme-toggle" aria-label="Toggle dark theme">🌙</button>
+        </div>
     </nav>
 
-    <section id="summary">
-        <h3>Summary</h3>
-        <p>An experienced Cloud and DevOps Engineer with 3 years of experience working in Multi-cloud. Skilled in implementing and maintaining cloud-based solutions, leveraging automation, and improving operational efficiencies. Adept at collaborating with cross-functional teams and stakeholders to deliver high-quality solutions that align with business goals.</p>
+    <section class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="./assets/background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <div class="profile-img" alt="Profile Image of R. Siva Sai Kumar"></div>
+            <h1>R. Siva Sai Kumar</h1>
+            <p>Cloud Engineer | DevOps Enthusiast | Bengaluru, IN</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="content-grid">
+            <div class="card">
+                <p>Dynamic Cloud Engineer with three years of experience driving impactful solutions in cloud infrastructure and DevOps practices. Expert in infrastructure as code, automation, and containerization, ensuring consistent and efficient deployments across diverse environments. Proficient in using tools such as Git, Azure DevOps, and Docker to streamline workflows and enhance collaboration. Committed to optimizing performance and reducing errors through innovative scripting and troubleshooting techniques.</p>
+            </div>
+        </div>
     </section>
 
     <section id="experience">
-        <h3>Professional Experience</h3>
-        <h4>Deloitte | Cloud and Operational Engineer</h4>
-        <p><strong>July 2023 - Present</strong></p>
-        <ul>
-            <li>Developing puppet files for Puppet Open Source and Masterless.</li>
-            <li>Defines infrastructure as code, ensuring consistency across environments.</li>
-            <li>Automates tasks like software installation and updates.</li>
-            <li>Enhances scalability, reduces errors, and speeds up deployment.</li>
-            <li>Troubleshoots configuration inconsistencies and system drift, ensuring stable deployments.</li>
-        </ul>
-
-        <h4>Department Of Health | Cloud and DevOps Engineer</h4>
-        <p><strong>July 2022 - July 2023</strong></p>
-        <ul>
-            <li>Collaborated using Git for effective code management.</li>
-            <li>Implemented Git best practices for a clean codebase.</li>
-            <li>Enforced access control through GitHub actions and branch restrictions.</li>
-            <li>Managed code reviews using branch protection rules.</li>
-            <li>Automated build, test, and deploy with Azure DevOps.</li>
-            <li>Created YAML-based pipelines for version-controlled processes.</li>
-            <li>Integrated Azure DevOps with Teams for smooth communication.</li>
-            <li>Utilized Docker for efficient containerization and deployment.</li>
-            <li>Enhanced development workflow through Docker and cloud providers.</li>
-        </ul>
-
-        <h4>TOTIRA | Developer and DevOps Engineer</h4>
-        <p><strong>March 2022 - July 2022</strong></p>
-        <ul>
-            <li>Developed and maintained Java applications with Spring Boot.</li>
-            <li>Assisted senior engineers in designing and implementing cloud solutions.</li>
-            <li>Contributed to automation script development using YAML.</li>
-            <li>Improved deployment processes through Azure DevOps.</li>
-            <li>Supported monitoring and troubleshooting of cloud infrastructure.</li>
-            <li>Utilized Azure DevOps for continuous integration and deployment.</li>
-        </ul>
+        <h2>Experience</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Cirruslabs | Cloud Engineer (Deloitte) | 07/2023 - Present</h3>
+                <ul class="experience-list">
+                    <li>Developing puppet files for puppet open source and Masterless.</li>
+                    <li>Defined infrastructure as code for consistent environments.</li>
+                    <li>Automated tasks using PowerShell and shell/bash scripts.</li>
+                    <li>Enhanced scalability and sped up deployment.</li>
+                    <li>Troubleshoots configuration inconsistencies and system drift, ensuring stable deployments</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Cirruslabs | Cloud and DevOps Engineer | 07/2022 - 07/2023</h3>
+                <ul class="experience-list">
+                    <li>Collaborated using Git for code management.</li>
+                    <li>Implemented Git best practices for a clean code base.</li>
+                    <li>Implemented CI/CD pipelines with Azure DevOps.</li>
+                    <li>Automated build and deploy with Azure DevOps.</li>
+                    <li>Created YAML-based pipelines for version-controlled processes.</li>
+                    <li>Utilized Docker for containerization.</li>
+                    <li>Integrated Azure DevOps with Teams.</li>
+                    <li>Enhanced development workflows through Docker and cloud providers</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Cirruslabs | Developer and DevOps Engineer | 03/2022 - 07/2022</h3>
+                <ul class="experience-list">
+                    <li>Developed Java applications with Spring Boot.</li>
+                    <li>Assisted in designing cloud solutions.</li>
+                    <li>Improved deployment with Azure DevOps.</li>
+                    <li>Supported monitoring and troubleshooting of cloud infrastructure.</li>
+                    <li>Utilized Azure DevOps for continuous integration and deployment.</li>
+                    <li>Gained experience with Git, GitHub, and Docker.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="skills">
-      <h3>Skills</h3>
-      <ul>
-          <li><strong>AZURE:</strong> Virtual Machines, Container registries, Storage, Web app services, SQL database.</li>
-          <li><strong>DevOps Tools:</strong> Git & GitHub, Azure DevOps, Docker, Puppet, Terraform.</li>
-          <li><strong>AWS:</strong> EC2, VPC, Auto-scaling, Load balancers, S3.</li>
-          <li><strong>Programming Languages:</strong> Core Java (Spring Boot), HTML, CSS, Python (Basic).</li>
-          <li><strong>Agile Tools:</strong> Jira, Kanban Boards.</li>
-      </ul>
-    </section>
-  
-    <section id="languages">
-        <h3>Languages</h3>
-        <ul>
-            <li>English</li>
-            <li>Telugu</li>
-            <li>Kannada</li>
-        </ul>
+        <h2>Skills</h2>
+        <div class="content-grid">
+            <div class="card">
+                <div class="skills-list">
+                    <span class="skill">Git</span>
+                    <span class="skill">GitHub</span>
+                    <span class="skill">Azure</span>
+                    <span class="skill">AWS</span>      
+                    <span class="skill">Azure DevOps</span>
+                    <span class="skill">PowerShell</span>
+                    <span class="skill">Shell Scripting</span>
+                    <span class="skill">Virtualization</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">Puppet</span>
+                    <span class="skill">Web Services</span>
+                    <span class="skill">Jira</span>
+                    <span class="skill">Kanban</span>
+                    <span class="skill">S3</span>
+                    <span class="skill">Java</span>
+                    <span class="skill">Python</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="education">
-        <h3>Education Background</h3>
-        <h4>Bachelor of Engineering</h4>
-        <p>Anna University - Completed in 2020</p>
-        <h4>Board Of Intermediate Education</h4>
-        <p>Sri Chaitanya Junior College - Completed in 2016</p>
-        <h4>Board Of Secondary Education</h4>
-        <p>Good Shepherd English Medium School - Completed in 2014</p>
+        <h2>Education</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Anna University | Chennai</h3>
+                <p>Electronic and Communication Engineering | 04/2020</p>
+            </div>
+            <div class="card">
+                <h3>Sri Chaitanya Junior College | Tirupati</h3>
+                <p>Board Of Intermediate Education | 04/2016</p>
+            </div>
+            <div class="card">
+                <h3>Good Shepherd English Medium | Kurnool</h3>
+                <p>Board Of Secondary Education | 05/2014</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Certifications">
+        <h2>Certifications</h2>
+        <div class="content-grid">
+            <div class="card">
+                <h3>Cloud Certifications</h3>
+                <p>Azure Fundamentals (AZ-900)</p>
+            </div>
+            <div class="card">
+                <h3>Scrum Certifications</h3>
+                <p>Scrum Developer Certified (SDC)</p>
+                <p>Scrum Fundamentals Certified (SFC)</p>
+            </div>
+            <div class="card">
+                <h3>Udemy</h3>
+                <p>Docker Mastery: With Kubernetes + Swarm</p>
+                <p>Azure DevOps Fundamentals</p>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
-        <h3>Contact</h3>
-        <p>Email: <a href="mailto:ragamsivasaikumar@gmail.com">ragamsivasaikumar@gmail.com</a></p>
-        <p>Location: Bengaluru, Karnataka, India</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/r-sivasai-kumar-110960215" target="_blank">sivasaikumar</a></p>
+        <h2>Contact Me</h2>
+        <!-- # Add your contact information here -->
+        <p>Email: <a href="mailto:ragamsivasaikumar@gmail.com">ragamsivasaikumar@gmail.com</a>, professional network: <a href="https://www.linkedin.com/in/r-sivasai-kumar-110960215/" target="_blank">Linkedin</a></p>
+        <p>GitHub: <a href="https://github.com/Sivasaikumar22" target="_blank">github.com/Sivasaikumar22</a></p>
+        <p>Location: Bengaluru, IN</p>
+        <p>Languages: English, Telugu, Kannada</p>
     </section>
 
     <footer>
-        <p>© 2024 R. Siva Sai Kumar</p>
+        <p>© 2025 R. Siva Sai Kumar. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">⬆</button>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add this before your scroll event listener
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', debounce(() => {
+            const hero = document.querySelector('.hero');
+            const scrollPosition = window.scrollY;
+            hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+        },10));
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navList = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+
+        // // Dark theme toggle functionality
+        // const themeToggle = document.getElementById('theme-toggle');
+        // const body = document.body;
+
+        // themeToggle.addEventListener('click', () => {
+        //     body.classList.toggle('dark-theme');
+        //     if (body.classList.contains('dark-theme')) {
+        //         themeToggle.textContent = '☀️'; // Change icon to sun
+        //     } else {
+        //         themeToggle.textContent = '🌙'; // Change icon to moon
+        //     }
+        // });
+
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // Scroll to the top when the button is clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Replace the existing Dark theme toggle functionality with this:
+        // Dark theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        function setTheme(isDark) {
+            if (isDark) {
+                body.classList.add('dark-theme');
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-theme');
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = !body.classList.contains('dark-theme');
+            setTheme(isDark);
+        });
+
+        // Check stored theme on page load
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            setTheme(storedTheme === 'dark');
+        }
+    </script>
 </body>
 </html>
